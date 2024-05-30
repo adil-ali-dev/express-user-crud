@@ -12,8 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("phoneNo").value = editUser?.phoneNo;
     document.getElementById("dateOfBirth").value = editUser?.dateOfBirth;
     document.getElementById("address").value = editUser?.address;
-    document.getElementById("password").style.display = "none";
-    document.getElementById("passwordLabel").style.display = "none";
+    document.getElementById("password").value = editUser?.password;
+    document.getElementById("password").disabled = true;
     document.querySelector(
       `input[name="gender"][value="${editUser.gender}"]`
     ).checked = true;
@@ -31,14 +31,15 @@ document.addEventListener("DOMContentLoaded", function () {
       phoneNo: document.getElementById("phoneNo").value,
       dateOfBirth: document.getElementById("dateOfBirth").value,
       address: document.getElementById("address").value,
-      password: editUser.password,
+      password: editUser ? editUser.password :document.getElementById("password").value
     };
-    console.log(userData);
     const requestUrl = userId
       ? `http://localhost:4000/users/edit-user?id=${userId}`
       : "http://localhost:4000/users/create-user";
     const requestMethod = userId ? "PATCH" : "POST";
-
+    if (requestMethod === "PATCH") {
+      delete userData.password
+    }
     fetch(requestUrl, {
       method: requestMethod,
       headers: {

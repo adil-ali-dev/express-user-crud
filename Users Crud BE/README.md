@@ -1,4 +1,4 @@
-# boiler-plate-express-js
+# express-js
 Starting express template with user, roles, migrations and seeders.
 
 It includes following

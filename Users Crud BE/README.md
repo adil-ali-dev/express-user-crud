@@ -46,8 +46,9 @@ It includes following
 ## Steps
 1. Install pre-reqs
 2. clone repo
-3. npm i 
-4. Run migrations // To create models 
-5. Run seeders // To seed default user and roles
-6. npm run start (normal)
-7. npm run start-dev (with nodemon)
+3. nvm use
+4. npm i 
+5. Run migrations // To create models 
+6. Run seeders // To seed default user and roles
+7. npm run start (normal)
+8. npm run start-dev (with nodemon)

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration Form</title>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>Registration Form</h2>
+      <form id="registrationForm">
+        <input type="hidden" id="userId" name="userId" />
+        <label for="firstName">First Name:</label>
+        <input type="text" id="firstName" name="firstName" required />
+
+        <label for="lastName">Last Name:</label>
+        <input type="text" id="lastName" name="lastName" required />
+
+        <label for="gender">Gender:</label>
+        <div class="gender-options">
+          <input type="radio" id="male" name="gender" value="male" required />
+          <label for="male">Male</label>
+          <input type="radio" id="female" name="gender" value="female" />
+          <label for="female">Female</label>
+          <input type="radio" id="other" name="gender" value="other" />
+          <label for="other">Other</label>
+        </div>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required />
+
+        <label for="phoneNo">Phone No:</label>
+        <input
+          type="tel"
+          id="phoneNo"
+          name="phoneNo"
+          pattern="[0-9]{10}"
+          required
+        />
+
+        <label for="dateOfBirth">Date of Birth:</label>
+        <input type="date" id="dateOfBirth" name="dateOfBirth" required />
+
+        <label for="address">Address:</label>
+        <textarea
+          id="address"
+          name="address"
+          rows="4"
+          cols="50"
+          required
+        ></textarea>
+
+        <label for="password" id="passwordLabel">Password:</label>
+        <input type="password" id="password" name="password" />
+
+        <input type="submit" value="Submit" />
+        <button class="backButton">
+          <a class="goBackRef" href="./index.html"> Go Back</a>
+        </button>
+      </form>
+    </div>
+
+    <script src="./index.js"></script>
+  </body>
+</html>
